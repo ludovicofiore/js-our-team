@@ -8,6 +8,9 @@
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 
 
+// richiamo funzione container
+const divContainer = document.querySelector(".container");
+
 // creo array con dentro oggetti 
 const teamArray = [
 
@@ -60,5 +63,29 @@ for (let i = 0; i< teamArray.length; i++) {
     // creo ciclo per stampare oggetti dell'array
     for (let key in teamElement) {
         console.log(key, ":", teamElement[key]);
+
+        // creo elemento
+        let teamMember = createElementWClass("p", "member");
+        // aggiungo contenuto
+        teamMember.innerHTML = (key + ": " + teamElement[key]);
+        // porto in pagina
+        divContainer.append(teamMember);
+
     }
+}
+
+
+
+
+// FUNZIONI
+
+// funzione per creare elemento html
+function createElementWClass (tagName, className) {
+
+    // creo elemento
+    const element = document.createElement(tagName);
+    // creo classe
+    element.classList.add(className);
+
+    return element
 }
