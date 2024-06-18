@@ -49,4 +49,16 @@ const teamArray = [
     },
 ];
 
-console.log(teamArray);
+// console.log(teamArray);
+
+// creo ciclo per array
+for (let i = 0; i< teamArray.length; i++) {
+
+    let teamElement = teamArray[i];
+    // console.log(teamElement);
+
+    // creo ciclo per stampare oggetti dell'array
+    for (let key in teamElement) {
+        console.log(key, ":", teamElement[key]);
+    }
+}
