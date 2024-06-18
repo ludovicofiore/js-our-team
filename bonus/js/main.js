@@ -11,9 +11,6 @@
 // richiamo funzione container
 const divContainer = document.querySelector(".container");
 
-
-
-
 // creo array con dentro oggetti 
 const teamArray = [
 
@@ -62,26 +59,32 @@ for (let i = 0; i< teamArray.length; i++) {
 
     let teamElement = teamArray[i];
 
-    // creo elemento per nome
-    let teamName = createElementWClass("p", "member");
-    // aggiungo contenuto
-    teamName.innerHTML = teamElement.name;
-    // porto in pagina
-    divContainer.append(teamName);
-
-    // creo elemento per ruolo
-    let teamRole = createElementWClass("p", "member");
-    // aggiungo contenuto
-    teamRole.innerHTML = teamElement.role;
-    // porto in pagina
-    divContainer.append(teamRole);
+    // creo elemento contenitore
+    let divBox = createElementWClass("div", "box");
+    divContainer.append(divBox);
 
     // creo elemento per immagine
     let teamImage = createElementWClass("img", "member");
     // aggiungo contenuto
     teamImage.src = teamElement.image
     // porto in pagina
-    divContainer.append(teamImage);
+    divBox.append(teamImage);
+
+    // creo elemento per nome
+    let teamName = createElementWClass("p", "member");
+    // aggiungo contenuto
+    teamName.innerHTML = teamElement.name;
+    // porto in pagina
+    divBox.append(teamName);
+
+    // creo elemento per ruolo
+    let teamRole = createElementWClass("p", "member");
+    // aggiungo contenuto
+    teamRole.innerHTML = teamElement.role;
+    // porto in pagina
+    divBox.append(teamRole);
+
+    
 
 
 }
